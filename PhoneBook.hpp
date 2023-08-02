@@ -11,7 +11,7 @@ class PhoneBook{
 	public:
 		PhoneBook();
 		bool	add_to_book(int i);
-		void	print();
+		void	print(int i);
 		bool	search(std::string c);
 		~PhoneBook();
 };

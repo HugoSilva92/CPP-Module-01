@@ -28,5 +28,4 @@ int	main(){
 				std::cout << "Wrong value for index, only numbers between 1 and 8";
 		}
 	}
-	book.print();
 }
