@@ -15,9 +15,10 @@ void	PhoneBook::print(int i){
 
 bool	PhoneBook::search(std::string c)
 {
-	if (atoi(c.c_str()) < 1 && atoi(c.c_str()) > 8)
+	int	nb = atoi(c.c_str()) - 1;
+	if (nb < 0 && nb > 7)
 		return false;
-	print(atoi(c.c_str()));
+	print(nb);
 	return true;
 }
 

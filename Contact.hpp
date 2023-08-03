@@ -15,6 +15,7 @@ class Contact{
 		Contact();
 		bool	add_cnt();
 		void	print();
+		std::string	resize_string(std::string str);
 		~Contact();
 };
 #endif

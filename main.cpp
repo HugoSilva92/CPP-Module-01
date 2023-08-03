@@ -27,5 +27,6 @@ int	main(){
 			if (!book.search(src))
 				std::cout << "Wrong value for index, only numbers between 1 and 8";
 		}
+		std::cout << i << std::endl;
 	}
 }
