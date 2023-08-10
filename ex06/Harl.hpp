@@ -22,6 +22,6 @@ class Harl{
 		void	error(void);
 };
 
-int	see_complain(Harl teste, std::string level);
+void	see_complain(Harl teste, std::string level);
 
 #endif
