@@ -1,5 +1,4 @@
 #include "Zombie.hpp"
-#define <iostream>
 
 int	main(void){
 	Zombie *ptr;

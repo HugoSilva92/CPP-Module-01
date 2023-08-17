@@ -26,12 +26,12 @@ void	replace(char **av){
 
 	toReplace = av[2];
 	arg = av[3];
-	name = av[1];
-	name.append(".replace");
  	in.open(av[1]);
-	out.open(name.c_str());
 	if (in.is_open())
 	{
+		name = av[1];
+		name.append(".replace");
+		out.open(name.c_str());
 		while(std::getline(in, line))
 		{
 			line = change_ocurrences(line, toReplace, arg);
@@ -39,5 +39,8 @@ void	replace(char **av){
 		}
 		in.close();
 		out.close();
+	}
+	else{
+		std::cout << "Error!" << std::endl;
 	}
 }
