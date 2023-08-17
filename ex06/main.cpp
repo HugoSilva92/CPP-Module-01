@@ -40,7 +40,7 @@ void	see_complain(Harl teste, std::string level){
 int	main(int ac, char **av){
 	Harl teste;
 
-	if (ac < 1 || ac > 2)
+	if (ac != 2)
 		std::cout << "Wrong number of arguments" << std::endl;
 	else
 		see_complain(teste, av[1]);
