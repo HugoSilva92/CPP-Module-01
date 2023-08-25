@@ -33,7 +33,6 @@ void	see_complain(Harl teste, std::string level){
 			std::cout << "[ ERROR ]" << std::endl;
 			teste.complain("error");
 			std::cout << std::endl;
-
 	}
 }
 
