@@ -1,5 +1,10 @@
 #include "replace.hpp"
 
+//This was the best way that I ve found to search and replace strings.
+//So while the pos is runnig, find is searching for the string,
+//the it appends to the buffer that is currentlly empty and then puts the string to replace to the buffer.
+//When the pos hits the npos(max of the string) it breaks and appends the rest of the string.
+
 std::string	change_ocurrences(std::string arg, std::string line, std::string str)
 {
 	std::string buffer;
@@ -19,7 +24,9 @@ std::string	change_ocurrences(std::string arg, std::string line, std::string str
 	return buffer;
 }
 
-void	replace(char **av){
+//Here I've learned the c++ way to open and read files
+
+int	replace(char **av){
 	std::ofstream	out;
 	std::ifstream	in;
 	std::string	name, line, arg, toReplace;
@@ -32,15 +39,17 @@ void	replace(char **av){
 		name = av[1];
 		name.append(".replace");
 		out.open(name.c_str());
-		while(std::getline(in, line))
-		{
+		while(std::getline(in, line))							//with the getline(), it allways goes till it finds a new line or null
+		{														//that way the file is going to be read till the end.
 			line = change_ocurrences(line, toReplace, arg);
 			out << line << std::endl;
 		}
 		in.close();
 		out.close();
+		return 0;
 	}
 	else{
 		std::cout << "Error!" << std::endl;
+		return 1;
 	}
 }

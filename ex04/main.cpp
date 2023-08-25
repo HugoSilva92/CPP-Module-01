@@ -3,7 +3,14 @@
 int	main(int ac, char **av)
 {
 	if (ac != 4)
+	{
 		std::cout << "Wrong number of arguments!" << std::endl;
+		return 1;
+	}
 	else
-		replace(av);
+	{
+		if (replace(av))
+			return 1;
+	}
+	return 0;
 }

@@ -20,13 +20,24 @@ void	Harl::error(void){
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+//This time used typedef so I can exercise more things
+
 void	Harl::complain(std::string level){
 	std::string msg[4] = {"debug", "info", "warning", "error"};
-	void (Harl::*fun[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	func funct[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	for (int i = 0; i < 4; i++)
 		if (msg[i] == level)
-			(this->*fun[i])();
+			(this->*funct[i])();
+}
+
+int	Harl::see_index(std::string level){
+	std::string msg[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (int i = 0; i < 4; i++)
+		if (msg[i] == level)
+			return i;
+	return 5;
 }
 
 Harl::~Harl(){

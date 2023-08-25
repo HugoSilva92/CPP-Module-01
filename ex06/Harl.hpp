@@ -3,17 +3,11 @@
 
 #include <iostream>
 
-/* enum Options{
-	op1,
-	op2,
-	op3,
-	op4,
-}; */
-
 class Harl{
 	public:
 		Harl();
 		void	complain(std::string level);
+		int		see_index(std::string level);
 		~Harl();
 	private:
 		void	debug(void);
@@ -22,6 +16,7 @@ class Harl{
 		void	error(void);
 };
 
+typedef void(Harl::*func)();
 void	see_complain(Harl teste, std::string level);
 
 #endif

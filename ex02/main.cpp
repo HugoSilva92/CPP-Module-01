@@ -1,6 +1,8 @@
 #include <string>
 #include <iostream>
 
+//This exercise is just to know how pointers and references work
+
 int	main(void){
 	std::string real = "HI THIS IS BRAIN";
 	std::string *ptr = &real;
@@ -13,4 +15,5 @@ int	main(void){
 	std::cout << "The value of the real one is: " << real << std::endl;
 	std::cout << "The value of the pointer is: " << *ptr << std::endl;
 	std::cout << "The value of the reference is: " << ref << std::endl;
+	return 0;
 }

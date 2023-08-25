@@ -1,5 +1,7 @@
 #include "Harl.hpp"
 
+
+
 Harl::Harl(){
 	;
 }
@@ -19,6 +21,14 @@ void	Harl::warning(void){
 void	Harl::error(void){
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
+
+//Well this one was a hard-one, never knew this was even possible,
+//A pointer array of functions that point to the reference of each function of Harl class
+//Some info: https://stackoverflow.com/questions/5093090/whats-the-syntax-for-declaring-an-array-of-function-pointers-without-using-a-se
+//It could be done using typedef too.
+
+//typedef void(Harl::*func)();
+//func funct[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 void	Harl::complain(std::string level){
 	std::string msg[4] = {"debug", "info", "warning", "error"};

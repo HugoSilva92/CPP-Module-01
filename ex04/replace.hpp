@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 
-void	replace(char **av);
+int	replace(char **av);
+std::string	change_ocurrences(std::string arg, std::string line, std::string str);
 
 #endif

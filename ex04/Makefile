@@ -3,6 +3,7 @@ CC = c++
 FLAGS = -std=c++98 -g -Wall -Wextra -Werror
 SRC = main.cpp replace.cpp
 OBJ = $(SRC:.cpp=.o)
+REPLACE = *.replace
 
 all: $(NAME)
 
@@ -17,5 +18,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf $(REPLACE)
 
 re: fclean all

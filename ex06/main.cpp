@@ -1,17 +1,13 @@
 #include "Harl.hpp"
 
-int	see_index(std::string level){
-	if (level == "DEBUG"){return 0;}
-	else if (level == "INFO"){return 1;}
-	else if (level == "WARNING"){return 2;}
-	else if (level == "ERROR"){return 3;}
-	return 4;
-}
+//Till now could't use switch statements, the problem here was with the compiler at home
+//it gave me fall through, had to change the makefile to clang so the error disappeared.
+//The rest is the exat same thing as the exercise before.
 
 void	see_complain(Harl teste, std::string level){
 	int i;
 
-	i = see_index(level);
+	i = teste.see_index(level);
 	switch (i){
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]";
@@ -40,7 +36,11 @@ int	main(int ac, char **av){
 	Harl teste;
 
 	if (ac != 2)
+	{
 		std::cout << "Wrong number of arguments" << std::endl;
+		return 1;
+	}
 	else
 		see_complain(teste, av[1]);
+	return 0;
 }

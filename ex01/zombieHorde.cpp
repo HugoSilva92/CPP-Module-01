@@ -1,5 +1,7 @@
 #include "Zombie.hpp"
 
+//This time I've learned how to make an array of objects, allocating memory.
+
 Zombie* zombieHorde(int N, std::string name){
 	Zombie *ptr = new Zombie[N];
 
